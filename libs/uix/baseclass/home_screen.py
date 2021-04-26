@@ -19,8 +19,13 @@ from kivymd.uix.textfield import MDTextField
 from kivy.uix.popup import Popup
 from kivy.properties import StringProperty
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.dropdown import DropDown
 class CustomDropDown(BoxLayout):
 	text=StringProperty("Open Dropdown")
+class CustDropDown(DropDown):
+	def __init__(self,**kwargs):
+		super(CustDropDown, self).__init__()
+		self.dismiss()
 class ThirdScreen(Image):
 	rect_box = ObjectProperty(None)
 	t_x = NumericProperty(0.0)

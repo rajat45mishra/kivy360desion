@@ -55,7 +55,7 @@ class AutoScaleLabel(MDLabel):
             elif ws < 1:
                 scale = "width"
             else:
-                if ws > hs:  # Use the one that will scale less
+                if ws > hs:
                     scale = "width"
                 else:
                     scale = "height"

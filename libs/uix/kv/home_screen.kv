@@ -29,13 +29,19 @@
 <CustomDropDown>:
     btn:btn.__self__
     dropdown:dropdown.__self__
-    Button:
+    MDRectangleFlatIconButton:
         id: btn
+        icon: "android"
         text: root.text
+        theme_text_color: "Custom"
+        text_color: 0, 0, 1, 1
+        line_color: 1, 0, 1, 1
+        icon_color: 1, 0, 0, 1
         on_release: dropdown.open(self)
         size_hint_y: None
         height:'48dp'
-    DropDown:
+        size_hint_x: .8
+    CustDropDown:
         id: dropdown
         on_select: root.text = '{}'.format(args[1])
         Button:
