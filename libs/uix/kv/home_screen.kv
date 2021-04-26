@@ -1,0 +1,183 @@
+<MyIcon@MDIconButton+MDTooltip>:
+    elevation: 12
+    user_font_size: "72sp"
+
+
+<ThirdScreen>:
+    id: main_image                                                      
+    source:"/Users/rajatmishra/Desktop/chain-link-690503_1920.jpg"     
+    canvas:
+        Color:                                                               
+            rgba:(0,0,0,0.3)
+        Line:
+            width:2
+            points: self.center_x,self.y,self.center_x,self.center_y
+        Line:
+            width:2
+            points: self.x,self.center_y,self.center_x,self.center_y
+        Line:
+            width:2
+            points: self.x,self.center_y,self.center_x+self.x,self.center_y
+        Line:
+            width:2
+            points:self.center_x,self.center_y+self.center_y,self.center_x,self.center_y
+        Rectangle:                                                      
+            id:root.rect_box                                          
+            pos:(root.x1, root.y1)                                     
+            size:(root.t_x - root.x1, root.t_y - root.y1)  
+
+<CustomDropDown>:
+    btn:btn.__self__
+    dropdown:dropdown.__self__
+    Button:
+        id: btn
+        text: root.text
+        on_release: dropdown.open(self)
+        size_hint_y: None
+        height:'48dp'
+    DropDown:
+        id: dropdown
+        on_select: root.text = '{}'.format(args[1])
+        Button:
+            text: 'First Item'
+            size_hint_y: None
+            height: '48dp'
+            on_release: dropdown.select('First Item')
+        Button:
+            text: 'Third Item'
+            size_hint_y: None
+            height: '48dp'
+            on_release: dropdown.select('Third Item')
+<AnotherScreen2>
+    orientation:"vertical"
+    GridLayout:
+        cols:1
+        row_default_height: 100
+        row_force_default: True
+        padding:20
+        MDTextField:
+            id:klo
+            hint_text: "Project Name"
+            helper_text: "ex:Project101"
+            helper_text_mode: "on_focus"
+        CustomDropDown:
+            id:kl
+        MDRaisedButton:
+            text:"Create Project"
+            on_release:root.post()
+<HomeScreen>
+    MDBoxLayout:
+        orientation: "vertical"
+        MDToolbar:
+            title: "Home"
+            right_action_items: [["briefcase-plus", lambda x: root.show_simple_dialog()],["file-multiple-outline", lambda x: app.root.change_screen("filemanager")],["logout", lambda x: x]]
+            left_action_items: [["home"]]
+        GridLayout:
+            cols:3
+            specing:3
+            center: root.width / 2, root.height / 2
+            MDCard:
+                size_hint_x:.2
+                orientation:"vertical"
+                ScrollView:
+                    MDGridLayout:
+                        cols:1
+                        adaptive_height: True
+                        padding: dp(4), dp(4)
+                        spacing: dp(4)
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"
+                        MyIcon:
+                            icon: "home"
+                            theme_text_color: "Custom"
+                            text_color: app.theme_cls.primary_color
+                            tooltip_text:"instructions"         
+            ThirdScreen:
+            MDCard:
+                id:kl
+                orientation:"vertical"
+                size_hint_x:.4
+                MDSlider:
+                    min: 0
+                    max: 100
+                    value: 40
+                    hint: False
+                MDSlider:
+                    min: 0
+                    max: 100
+                    value: 40
+                    hint: False
+                MDSlider:
+                    min: 0
+                    max: 100
+                    value: 40
+                    hint: False
+                MDSlider:
+                    min: 0
+                    max: 100
+                    value: 40
+                    hint: False
+                MDLabel:
+                    text:"ISO:"
+                CustomDropDown:
+                MDLabel:
+                    text:"ShutterSpeed:"
+                CustomDropDown:
+                MDLabel:
+                    text:"Aperture:"
+                CustomDropDown:
+                MDLabel:
+                    text:"ISO:"
+                CustomDropDown:
+                MDLabel:
+                    text:"ShutterSpeed:"
+                CustomDropDown:
+                MDLabel:
+                    text:"Aperture:"
+                CustomDropDown:
+
+
+

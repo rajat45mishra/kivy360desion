@@ -1,0 +1,31 @@
+{
+    "from libs.uix.baseclass.login import LoginScreen": {
+        "screen_name": "login",
+        "factory": "Factory.LoginScreen()"
+    },
+    "from libs.uix.baseclass.home_screen import HomeScreen": {
+        "screen_name": "home",
+        "factory": "Factory.HomeScreen()"
+    },
+    "from libs.uix.baseclass.signup import SignupScreen": {
+        "screen_name": "signup",
+        "factory": "Factory.SignupScreen()"
+    },
+    "from libs.uix.baseclass.filemanager import FileManager": {
+        "screen_name": "filemanager",
+        "factory": "Factory.FileManager()"
+    },
+    "from libs.uix.baseclass.subfolder import SubFolder": {
+        "screen_name": "subfolder",
+        "factory": "Factory.SubFolder()"
+    },
+    "from libs.uix.baseclass.video import VideoPl": {
+        "screen_name": "video",
+        "factory": "Factory.VideoPl()"
+    },
+    "from libs.uix.baseclass.ImagesPl import ImagesPl": {
+        "screen_name": "image",
+        "factory": "Factory.ImagesPl()"
+    }
+
+}

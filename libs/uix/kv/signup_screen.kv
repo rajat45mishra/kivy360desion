@@ -1,0 +1,157 @@
+#:import utils kivy.utils
+<RoundedButton@Button>:
+    background_color: 0,0,0,0  # the last zero is the critical on, make invisible
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex('#BADDF6') if self.state=='normal' else utils.get_color_from_hex('#3dc2eb')  # visual feedback of press
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10,]
+<ButtonILike>:
+    text_size: self.width-5, None
+    size_hint: (1, None)
+    height: self.texture_size[1] + 20
+    background_color: 0,0,0,0
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex('#BADDF6') if self.state=='normal' else (0,.7,.7,1)  # visual feedback of press
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [2,]
+
+<SignupScreen>
+    MDBoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            orientation:'vertical'
+            padding:[50,20,20,150]
+            ScrollView:
+                do_scroll_x:False
+                MDList:
+                    id:mlop
+                    MDTextField:
+                        id:tyu
+                        hint_text: "Name"
+                        helper_text: "ex:ayush patel"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:top
+                        hint_text: "Company Name"
+                        helper_text: "ex:Turiean Systems LLP"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tio
+                        hint_text: "Email"
+                        helper_text: "ex:rajat@turiean.com"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "Mobile"
+                        helper_text: "ex:+91-8160201174"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "Password"
+                        helper_text: "ex:Turiean@1234"
+                        helper_text_mode: "on_focus"
+                        password:True
+                    MDTextField:
+                        id:tic
+                        hint_text: "Conform Password"
+                        helper_text: "ex:Conform Password"
+                        helper_text_mode: "on_focus"
+                        password:True
+                    MDTextField:
+                        id:tic
+                        hint_text: "Address1"
+                        helper_text: "ex:Address1"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "Address2"
+                        helper_text: "ex:Address2"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "City"
+                        helper_text: "ex:Enter City"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "State"
+                        helper_text: "ex:Enter State"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "Country"
+                        helper_text: "ex:Enter Country"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "PINCode"
+                        helper_text: "ex:Enter PINCode"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "VAT or GSTIN No."
+                        helper_text: "ex:Enter VAT or GSTIN No."
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "Logo Link"
+                        helper_text: "ex:https//:www.turiean.com/logo.png"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "City"
+                        helper_text: "ex:Enter City"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "State"
+                        helper_text: "ex:Enter State"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "Country"
+                        helper_text: "ex:Enter Country"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "PINCode"
+                        helper_text: "ex:Enter PINCode"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "VAT or GSTIN No."
+                        helper_text: "ex:Enter VAT or GSTIN No."
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:tic
+                        hint_text: "Logo Link"
+                        helper_text: "ex:https//:www.turiean.com/logo.png"
+                        helper_text_mode: "on_focus"
+                    MDTextField:
+                        id:ticd
+                        hint_text: "Date of Birth or Est." 
+                        helper_text: "ex:10/07/1994"
+                        helper_text_mode: "on_focus"
+
+                    
+
+        GridLayout:
+            cols: 1
+            row_default_height:dp(45)
+            row_force_default: True
+            size_hint_y: None
+            height: self.minimum_height
+            padding: dp(4), dp(4)
+            spacing: dp(4)
+            pos_hint: {'center_x': 0.50, 'center_y': 0.05}
+            RoundedButton:
+                text:"Sign Up"
+                size:dp(10),dp(10)
+                color: utils.get_color_from_hex('#000000')
+                on_release:app.root.current="login"

@@ -1,0 +1,54 @@
+#:import utils kivy.utils
+<RoundedButton@Button>:
+    background_color: 0,0,0,0  
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex('#BADDF6') if self.state=='normal' else utils.get_color_from_hex('#3dc2eb')
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10,]
+<LoginScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        MDLabel:
+            font_style: 'Caption'
+            theme_text_color: 'Primary'
+            text: "Login"
+            font_family:'Roboto Slab'
+            font_size:dp(18)
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+        BoxLayout:
+            orientation: "vertical"
+            spacing: "2dp"
+            padding:dp(30),dp(40),dp(30),dp(200)
+            MDTextField:
+                id:jkl
+                hint_text: "Email"
+                helper_text: "ex:rajat@xyz.com"
+                helper_text_mode: "on_focus"
+            MDTextField:
+                id:pwd
+                hint_text: "Password"
+                helper_text: "ex:turiean@9537"
+                helper_text_mode: "on_focus"
+                password:True
+            GridLayout:
+                cols: 1
+                row_default_height:dp(45)
+                row_force_default: True
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(4), dp(4)
+                spacing: dp(4)
+                pos_hint: {'center_x': 0.50, 'center_y': 0.05}
+                RoundedButton:
+                    text:"Login"
+                    size:dp(10),dp(10)
+                    color: utils.get_color_from_hex('#000000')
+                    on_release:app.root.current="home"
+                MDFlatButton:
+                    text: 'Sign Up Here for New Users'
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.6}
+                    on_release: app.root.current="signup"

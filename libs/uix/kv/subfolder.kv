@@ -1,0 +1,32 @@
+<MyLabel@ButtonBehavior+MDLabel>:
+<SubFolder>
+    MDBoxLayout:
+        orientation: "vertical"
+        MDToolbar:
+            title: "Project Details"
+            right_action_items: [["home", lambda x: app.root.change_screen("filemanager")]]
+        BoxLayout:
+            orientation:"vertical"
+            GridLayout:
+                cols:3
+                spacing:60
+                padding:100
+                MDCard:
+                    size_hint:.4,.4
+                    Image:
+                        source:"1.png"
+                    MDFlatButton:
+                        text:"View Image"
+                        on_release:app.root.change_screen("image")
+                MDCard:
+                    size_hint:.4,.4
+                    Image:
+                        source:"1.png"
+                    MDFlatButton:
+                        text:"View Video"
+                        on_release:app.root.change_screen("video")
+            GridLayout:
+                cols:2
+            GridLayout:
+                cols:2
+                
