@@ -15,11 +15,30 @@ from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDRaisedButton
 from kivy.uix.boxlayout import BoxLayout
 from kivy import utils as colu
+from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.textfield import MDTextField
 from kivy.uix.popup import Popup
 from kivy.properties import StringProperty
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.dropdown import DropDown
+from kivymd.uix.button import MDIconButton
+from kivymd.uix.label import MDLabel
+from kivymd.uix.tooltip import MDTooltip
+from kivymd.uix.behaviors import (
+    RectangularRippleBehavior,
+    BackgroundColorBehavior,
+    FakeRectangularElevationBehavior,
+)
+class RectangularElevationButton(
+    RectangularRippleBehavior,
+    FakeRectangularElevationBehavior,
+    ButtonBehavior,
+    Image,
+    BackgroundColorBehavior,
+    MDTooltip
+):
+    md_bg_color = [192,192,192, 1]
+    icon = StringProperty("1.png")
 class CustomDropDown(BoxLayout):
 	text=StringProperty("Open Dropdown")
 class CustDropDown(DropDown):
@@ -45,22 +64,24 @@ class ThirdScreen(Image):
 		print("\tAbsolute pos_y=", self.ids.main_image.center_y - self.ids.main_image.norm_image_size[1] / 2.)
 	def on_touch_down(self, touch):
 		width, height = self.norm_image_size
-		if self.center_x - width / 2 < touch.x < self.center_x + width / 2 and self.center_y - height / 2 < touch.y < self.center_y + width / 2:
+		if self.center_x - width / 2 < touch.x < self.center_x + width / 2 and self.center_y - height / 2 < touch.y < self.center_y + height / 2:
 			self.x1 = touch.x
 			self.y1 = touch.y
 			self.t_x = touch.x
 			self.t_y = touch.y
 		touch.grab(self)
 		print(self.x1, self.y1)
+		print("rectpos",self.x1, self.y1,(self.t_x - self.x1, self.t_y - self.y1) )
 		print ("pos///up")
 		print (self.pos,self.size)
 	def on_touch_move(self, touch):
 		width, height = self.norm_image_size
 		if touch.grab_current is self:
-			if self.center_x - width / 2 < touch.x < self.center_x + width / 2 and self.center_y - height / 2 < touch.y < self.center_y + width / 2:
+			if self.center_x - width / 2 < touch.x < self.center_x + width / 2 and self.center_y - height / 2 < touch.y < self.center_y + height / 2:
 				self.t_x = touch.x
 				self.t_y = touch.y
 			print(self.t_x, self.t_y)
+			print("rectpos",self.x1, self.y1,(self.t_x - self.x1, self.t_y - self.y1) )
 	def on_touch_up(self, touch):
 		if touch.grab_current is self:
 			self.x2 = touch.x
@@ -68,7 +89,7 @@ class ThirdScreen(Image):
 			print(self.x2, self.y2)
 			print("pos///dow")
 			print(self.pos,self.size)
-      
+			print("rectpos",self.x1, self.y1,(self.t_x - self.x1, self.t_y - self.y1) )
 class AnotherScreen2(BoxLayout):
     def __init__(self, **kwargs):
         super(AnotherScreen2,self).__init__(**kwargs)
