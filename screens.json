@@ -1,5 +1,5 @@
 {
-    "from libs.uix.baseclass.login import LoginScreen": {
+    "from libs.uix.baseclass.login_screen import LoginScreen": {
         "screen_name": "login",
         "factory": "Factory.LoginScreen()"
     },
@@ -27,5 +27,4 @@
         "screen_name": "image",
         "factory": "Factory.ImagesPl()"
     }
-
 }

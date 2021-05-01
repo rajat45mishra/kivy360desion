@@ -11,22 +11,22 @@
             rgba:(0,0,0,0.3)
         Line:
             width:2
-            points: main_image.center_x,main_image.center_y-main_image.norm_image_size[1] / 2,main_image.center_x,self.center_y
+            points: self.center_x,self.center_y-self.norm_image_size[1] / 2,self.center_x,self.center_y
             dash_length:5
             dash_offset:50 
         Line:
             width:2
-            points: main_image.center_x-main_image.norm_image_size[0] / 2,self.center_y,self.center_x,self.center_y
+            points: self.center_x-self.norm_image_size[0] / 2,self.center_y,self.center_x,self.center_y
             dash_length:5
             dash_offset:50 
         Line:
             width:2
-            points: main_image.center_x-main_image.norm_image_size[0] / 2,self.center_y,main_image.center_x+main_image.norm_image_size[0] / 2,self.center_y
+            points: self.center_x-self.norm_image_size[0] / 2,self.center_y,self.center_x+self.norm_image_size[0] / 2,self.center_y
             dash_length:5
             dash_offset:50 
         Line:
             width:2
-            points:self.center_x,self.center_y+main_image.norm_image_size[1] / 2,self.center_x,self.center_y
+            points:self.center_x,self.center_y+self.norm_image_size[1] / 2,self.center_x,self.center_y
             dash_length:5
             dash_offset:50 
         Rectangle:                                                      
@@ -110,18 +110,6 @@
                             elevation:18
                         RectangularElevationButton:
                             elevation:18
-                        RectangularElevationButton:
-                            elevation:18
-                        RectangularElevationButton:
-                            elevation:18
-                        RectangularElevationButton:
-                            elevation:18
-                        RectangularElevationButton:
-                            elevation:18
-                        RectangularElevationButton:
-                            elevation:18
-                        RectangularElevationButton:
-                            elevation:18       
             ThirdScreen:
             MDCard:
                 id:kl

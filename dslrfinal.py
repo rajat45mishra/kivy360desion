@@ -3,7 +3,7 @@ import platform
 
 from kivy.core.window import Window
 from kivymd.app import MDApp
-
+from kivy.clock import Clock
 from libs.uix.baseclass.root import Root
 
 # This is needed for supporting Windows 10 with OpenGL < v2.0
