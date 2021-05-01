@@ -67,9 +67,10 @@
     orientation:"vertical"
     GridLayout:
         cols:1
-        row_default_height: 100
+        row_default_height: 50
         row_force_default: True
-        padding:20
+        padding:5
+        spacing:4
         MDTextField:
             id:klo
             hint_text: "Project Name"
@@ -92,7 +93,7 @@
             specing:3
             center: root.width / 2, root.height / 2
             MDCard:
-                size_hint_x:.12
+                size_hint_x:.125
                 orientation:"vertical"
                 ScrollView:
                     MDGridLayout:
@@ -139,9 +140,24 @@
                 MDCard:
                     orientation:"vertical"
                     padding:10
+                    GridLayout:
+                        cols:2
+                        spacing:4
+                        MDLabel:
+                            text:"ISO:"
+                            width:10
+                        Image:
+                            source: "1.png"
+                            size_hint_x:.1
+                            size_hint_y:.1
+                    CustomDropDown:
+                MDCard:
+                    orientation:"vertical"
+                    padding:10
                     spacing:3
                     GridLayout:
                         cols:2
+                        spacing:10
                         MDLabel:
                             text:"ISO:"
                             width:10
@@ -164,62 +180,9 @@
                             size_hint_x:.1
                             size_hint_y:.1
                     CustomDropDown:
-                MDCard:
-                    orientation:"vertical"
-                    padding:10
-                    spacing:3
-                    GridLayout:
-                        cols:2
-                        MDLabel:
-                            text:"ISO:"
-                            width:10
-                        Image:
-                            source: "1.png"
-                            size_hint_x:.1
-                            size_hint_y:.1
-                    CustomDropDown:
-                MDCard:
-                    orientation:"vertical"
-                    padding:10
-                    spacing:3
-                    GridLayout:
-                        cols:2
-                        MDLabel:
-                            text:"ISO:"
-                            width:10
-                        Image:
-                            source: "1.png"
-                            size_hint_x:.1
-                            size_hint_y:.1
-                    CustomDropDown:
-                MDCard:
-                    orientation:"vertical"
-                    padding:10
-                    spacing:3
-                    GridLayout:
-                        cols:2
-                        MDLabel:
-                            text:"ISO:"
-                            width:10
-                        Image:
-                            source: "1.png"
-                            size_hint_x:.1
-                            size_hint_y:.1
-                    CustomDropDown:
-                MDCard:
-                    orientation:"vertical"
-                    padding:10
-                    spacing:3
-                    GridLayout:
-                        cols:2
-                        MDLabel:
-                            text:"ISO:"
-                            width:10
-                        Image:
-                            source: "1.png"
-                            size_hint_x:.1
-                            size_hint_y:.1
-                    CustomDropDown:
+                
+                
+                
 
 
 
